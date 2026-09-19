@@ -1,46 +1,36 @@
-# XPadCheck360
+XPadCheck360
+A real-time controller diagnostic suite and analog stick drift-testing utility built natively for modified Xbox 360 consoles (RGH / JTAG / Devkit).
 
-A dedicated, lightweight controller diagnostic and analog stick drift testing utility for modified Xbox 360 consoles (RGH/JTAG).
+Designed to provide pinpoint hardware diagnostics, XPadCheck360 gives you an instant, raw-data view of your gamepad's internal sensors, deadzones, and wireless connection health.
 
-Built with raw Direct3D 9 and XInput, XPadCheck360 provides real-time telemetry, button response monitoring, and calibrated deadzone testing to inspect and diagnose OEM and aftermarket Xbox 360 gamepads.
+What It Does
+Thumbstick Drift & Axis Scope: Visualizes analog stick resting position and deflection on twin radar scopes. Displays raw input integers (-32,768 to 32,767), real-time deflection percentages, and live Euclidean drift magnitude calculation. Includes official Microsoft factory circular deadzone rings (7,849 for Left Stick; 8,689 for Right Stick) so you can immediately spot physical stick drift, loose centering springs, or worn potentiometers.
 
----
+Analog Trigger Tracking: Measures left and right analog trigger travel from 0 (unpressed) to 255 (fully depressed) with color-coded gauge bars to identify dead travel or sensor degradation.
 
-## Features
+Digital Input Matrix: Full visual mapping for face buttons, directional pad, bumpers, and thumbstick clicks (LS / RS), featuring active color-shift indicators upon press.
 
-* **Precision Stick Drift Scope:** Live Euclidean radial deadzone visualization using official Microsoft SDK thresholds (LS: `7849`, RS: `8689`).
-* **Real-Time Axis Telemetry:** Displays raw integer values (`-32768` to `32767`), deflection percentages, and total drift magnitude vectors.
-* **Analog Trigger Gauges:** 8-bit precision bars (`0` to `255`) for inspecting potentiometer sweep and trigger wear.
-* **Full Digital Button Mapping:** Visual state tracking for face buttons, D-pad directions, shoulder bumpers, and thumbstick clicks.
-* **Rumble Motor Testing:** Dedicated trigger tests for both heavy (left) and light (right) vibration motors.
-* **Overscan Safe Layout:** Engineered within title-safe display margins for full visibility on standard CRT and modern HDTV displays.
+Rumble Motor Testing: Dedicated vibration test routine driving the low-frequency heavy weight (held via LB) and high-frequency light weight (held via RB) at full power to verify motor functionality.
 
----
+Wireless Packet & Link Diagnostics: Tracks incoming XInput packet sequence numbers (dwPacketNumber) in real time to diagnose wireless sync issues, signal drops, or high-latency RF environments.
 
-## Installation
+4-Port Controller Scanner: Simultaneously scans console hardware ports P1 through P4, allowing quick identification of connected controllers without needing to reboot the dashboard.
 
-1. Download the latest `default.xex` from the [Releases](https://github.com/Retrozcube/XPadCheck360/releases) tab.
-2. Copy `default.xex` to your console storage (e.g., `Hdd1:\Apps\XPadCheck360\default.xex`) via USB or FTP.
-3. Launch the application using Aurora, DashLaunch, Freestyle Dash, or XeXMenu.
+How to Install & Update
+You can keep XPadCheck360 up to date using either of two methods:
 
----
+Option 1: Automatic Over-the-Air Update (Recommended)
+Keep updater.xex in the same directory as default.xex on your console's hard drive or USB drive:
 
-## Controls
+Launch updater.xex via Aurora or XeXMenu.
 
-| Input | Action |
-| :--- | :--- |
-| **Left Stick / Right Stick** | Real-time position & drift scope testing |
-| **LT / RT** | Analog trigger actuation sweep (`0–255`) |
-| **LB (Hold)** | Test heavy vibration motor |
-| **RB (Hold)** | Test light vibration motor |
-| **Face Buttons / D-Pad** | Digital switch responsiveness check |
+Press [A] Check Updates to query GitHub for the latest release.
 
----
+If a new version is detected, select [A] Download — the updater will stream the binary directly over the network and overwrite default.xex in place without needing a PC.
 
-## Building from Source
+Option 2: Manual Installation
+Navigate to the Releases page on this repository.
 
-* **IDE:** Microsoft Visual Studio 2010
-* **SDK:** Xbox 360 SDK (XDK)
-* **Post-Processing:** Use `xextool` to package the compiled `.xex` binary for retail/RGH execution:
-  ```cmd
-  xextool.exe -m r -r a -e u -o default.xex XPadCheck360.xex
+Download the latest pre-compiled default.xex asset.
+
+Transfer the file to your console folder (e.g., Hdd1:\Apps\XPadCheck360\) via USB or FTP, replacing your existing executable.
