@@ -1,36 +1,49 @@
-XPadCheck360
-A real-time controller diagnostic suite and analog stick drift-testing utility built natively for modified Xbox 360 consoles (RGH / JTAG / Devkit).
+# XPadCheck360
 
-Designed to provide pinpoint hardware diagnostics, XPadCheck360 gives you an instant, raw-data view of your gamepad's internal sensors, deadzones, and wireless connection health.
+A real-time controller diagnostic suite and analog stick drift-testing utility built natively for modified Xbox 360 consoles (**RGH / JTAG / Devkit**).
 
-What It Does
-Thumbstick Drift & Axis Scope: Visualizes analog stick resting position and deflection on twin radar scopes. Displays raw input integers (-32,768 to 32,767), real-time deflection percentages, and live Euclidean drift magnitude calculation. Includes official Microsoft factory circular deadzone rings (7,849 for Left Stick; 8,689 for Right Stick) so you can immediately spot physical stick drift, loose centering springs, or worn potentiometers.
+Designed to provide pinpoint hardware diagnostics, **XPadCheck360** gives you an instant, raw-data view of your gamepad's internal sensors, deadzones, and wireless connection health.
 
-Analog Trigger Tracking: Measures left and right analog trigger travel from 0 (unpressed) to 255 (fully depressed) with color-coded gauge bars to identify dead travel or sensor degradation.
+---
 
-Digital Input Matrix: Full visual mapping for face buttons, directional pad, bumpers, and thumbstick clicks (LS / RS), featuring active color-shift indicators upon press.
+## 🎮 Features & Diagnostics
 
-Rumble Motor Testing: Dedicated vibration test routine driving the low-frequency heavy weight (held via LB) and high-frequency light weight (held via RB) at full power to verify motor functionality.
+* **Thumbstick Drift & Axis Scope**  
+  Visualizes resting position and live stick travel on twin radar scopes. Displays raw input integers (`-32,768` to `32,767`), real-time deflection percentages, and Euclidean drift magnitude. Includes official Microsoft factory circular deadzone rings (**7,849** for Left Stick, **8,689** for Right Stick) to easily spot physical drift, loose centering springs, or worn potentiometers.
 
-Wireless Packet & Link Diagnostics: Tracks incoming XInput packet sequence numbers (dwPacketNumber) in real time to diagnose wireless sync issues, signal drops, or high-latency RF environments.
+* **Analog Trigger Tracking**  
+  Measures left and right analog trigger travel from `0` (unpressed) to `255` (fully depressed) with color-coded gauge bars to detect dead travel or sensor wear.
 
-4-Port Controller Scanner: Simultaneously scans console hardware ports P1 through P4, allowing quick identification of connected controllers without needing to reboot the dashboard.
+* **Digital Input Matrix**  
+  Complete visual mapping for all digital inputs: face buttons (**A**, **B**, **X**, **Y**), D-pad directions, bumpers (**LB**, **RB**), and thumbstick clicks (**LS**, **RS**), featuring active color-shift indicators upon press.
 
-How to Install & Update
-You can keep XPadCheck360 up to date using either of two methods:
+* **Rumble Motor Testing**  
+  Dedicated vibration testing routine driving the low-frequency heavy weight (held via **LB**) and high-frequency light weight (held via **RB**) at full power to verify motor functionality.
 
-Option 1: Automatic Over-the-Air Update (Recommended)
-Keep updater.xex in the same directory as default.xex on your console's hard drive or USB drive:
+* **Wireless Packet & Link Diagnostics**  
+  Tracks incoming XInput packet sequence numbers (`dwPacketNumber`) in real time to diagnose wireless sync issues, signal drops, or high-latency RF environments.
 
-Launch updater.xex via Aurora or XeXMenu.
+* **4-Port Controller Scanner**  
+  Simultaneously monitors console hardware ports **P1** through **P4** to verify controller detection and slot assignments without needing to reboot the dashboard.
 
-Press [A] Check Updates to query GitHub for the latest release.
+---
 
-If a new version is detected, select [A] Download — the updater will stream the binary directly over the network and overwrite default.xex in place without needing a PC.
+## 📥 Installation & Updates
 
-Option 2: Manual Installation
-Navigate to the Releases page on this repository.
+Choose either of the two installation methods below:
 
-Download the latest pre-compiled default.xex asset.
+### Option 1: Automatic Over-the-Air Update (Recommended)
 
-Transfer the file to your console folder (e.g., Hdd1:\Apps\XPadCheck360\) via USB or FTP, replacing your existing executable.
+Keep `updater.xex` in the same directory as `default.xex` on your console's hard drive or USB drive.
+
+1. Launch **`updater.xex`** via Aurora or XeXMenu.
+2. Press **[A] Check Updates** to query GitHub for the latest release.
+3. If a new version is detected, select **[A] Download** — the updater will stream the binary directly over the network and replace `default.xex` in place without needing a PC.
+
+---
+
+### Option 2: Manual Installation
+
+1. Go to the **[Releases](https://github.com/Retrozcube/XPadCheck360/releases)** page on this repository.
+2. Download the latest pre-compiled **`default.xex`** binary.
+3. Copy the file into your console folder (e.g., `Hdd1:\Apps\XPadCheck360\`) via USB or FTP, replacing your existing executable.
