@@ -1,3 +1,4 @@
+<img width="430" height="238" alt="Check_for_updates" src="https://github.com/user-attachments/assets/8842bc37-f734-4e1c-9035-2c4d708df614" />
 <img width="1650" height="978" alt="App" src="https://github.com/user-attachments/assets/001b26ab-6bbb-4aa2-aaa2-fa2a8e68457b" />
 [0000016620260916225929218.bmp](https://github.com/user-attachments/files/32447325/0000016620260916225929218.bmp)
 
